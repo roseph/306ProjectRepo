@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>UREC Count IT</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="custom.css">
+		<!--Date/time picker css ref -->
+		<link rel="stylesheet" href="bootstrap-datetimepicker.min.css" media ="screen">
+
+		<script src="validation-resv_2.js" type="text/javascript"></script>
+
+		
+	</head>
+
+	<body>
+
+		<div id="site-wrapper" class="container-fluid">
+			<h2><img src="./images/UREC-logo.png" width="100px"> <small>Live. Breathe. UREC.
+
+				<div id="site-mockheader">
+					<button type="button" class="btn btn-default toggle-nav" aria-label="Left Align">
+  						<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu
+					</button>
+				</div>
+
+				<div class="panel panel-default" id="site-body">
+				<div class="panel-heading">
+    				<h3 class="panel-title">Make a Reservation</h3>
+  				</div>
+  				<p class="panel-body">
+					<!--ROom Selection dropdown -->
+					<div class="dropdown container-fluid">
+  						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"> 
+  							Room
+   							 <span class="caret"></span>
+  						</button>
+  							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    							<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Racketball Court#1</a></li>
+   								 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Racketball Court#2</a></li>
+   								 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Room 205</a></li>
+   								 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Room 105</a></li>
+  							</ul>
+  					</div>
+
+
+
+  						
+						 <!-- Start of date/time Picker Forms -->
+						<div class="container">
+						    <form action="" class="form-horizontal"  role="form">
+						        <fieldset>
+						            
+						            <!-- Date Picker Form -->
+									<div class="form-group">
+						                <label for="dtp_input2" class="col-md-2 control-label">Select a Date</label>
+						                <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+						                    <input class="form-control" size="16" type="text" value="" readonly>
+						                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						                </div>
+										<input type="hidden" id="dtp_input2" value="" /><br/>
+						            </div>
+						            <!-- Time Picker Form -->
+									<div class="form-group">
+						                <label for="dtp_input3" class="col-md-2 control-label">Select a Time</label>
+						                <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+						                    <input class="form-control" size="16" type="text" value="" readonly>
+						                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+											<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+						                </div>
+										<input type="hidden" id="dtp_input3" value="" /><br/>
+						            </div>
+						        </fieldset>
+						    </form>
+						</div>
+
+							<!--Time Duration dropdown -->
+							<div class="dropdown container-fluid ">
+								<label class="col-md-2 control-label">Duration</label><br>
+  								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"> 
+  									1 hour
+   							 	<span class="caret"></span>
+  								</button>
+  								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">30 minutes</a></li>
+   								 	<li role="presentation"><a role="menuitem" tabindex="-1" href="#">1 hour</a></li>
+  								</ul>
+  							</div>
+						<br>
+						
+							<!--Jac form -->
+						<div class="container center-block">
+  							<form role="form">
+    						<div class="form-group">
+  							 <label for="number">JACard #:</label>
+     						 <input type="number" class="form-control" id="jac-textbox" placeholder="Enter your 9-digit JACard Number" onkeydown="return isNumberKey(event)">
+   						</div>
+						<br>
+						
+ 						</form>
+						</div>
+						
+						<!--Email form -->
+						<div class="container center-block">
+  							<form role="form">
+    						<div class="form-group">
+  							 <label for="email">Email:</label>
+     						 <input type="email" class="form-control" id="email-textbox" placeholder="Enter your JMU Email">
+   						</div>
+    					<button type="submit" class="btn btn-default" id="submit-btn">Submit</button>
+ 						</form>
+						</div>
+
+
+				</p>
+  				</div>
+			
+          
+				
+
+
+	
+					<!-- Page links for the menu go in the nested list/a tag below -->
+					<div id="site-menu" class="toggle-nav">
+						<h2 class="panel-heading">Menu</h2>
+						<ul class="list-group">
+							<li class="list-group-item"><a href="index.html">Home</a></li>
+							<li class="list-group-item"><a href="live_map_1.html">Live Map</a></li>
+							<li class="list-group-item"><a href="historical_Data.html">Historical Trends</a></li>
+							<li class="list-group-item"><a href="resv_1.html">Reservations</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+
+
+
+
+
+		<!--Scripts-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<script src="slideoutmenu.js"></script>
+		<script type="text/javascript">init();</script>
+
+		<!-- Script ref. for date/timepicker-->
+		<script src="js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+		<!-- Date/Time Picker Script below -->
+		<script type="text/javascript">
+		    //Date_picker Function
+			$('.form_date').datetimepicker({
+		        language:  'fr',
+		        weekStart: 1,
+		        todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				minView: 2,
+				forceParse: 0
+		    });
+		    //Time_picker Function
+			$('.form_time').datetimepicker({
+		        language:  'fr',
+		        weekStart: 1,
+		        todayBtn:  1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 1,
+				minView: 0,
+				maxView: 1,
+				forceParse: 0
+		    });
+		</script>
+
+	</body>
+
+</html>
