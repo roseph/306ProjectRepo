@@ -3,18 +3,19 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!--<meta http-equiv="refresh" content="10">-->
+		<meta http-equiv="refresh" content="60">
 
 		<title>UREC Count IT</title>
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="custom.css">
+		<script src="liveGraph.js" type="text/javascript"></script>
 		
  	   	
 	</head>
 
-	<body>
+	<body onload="getLiveMapData3();">
 
 		<div id="site-wrapper" class="container-fluid">
 			<h2><img src="./images/UREC-logo.png" width="100px"> <small>Live. Breathe. UREC.</small></h2>
@@ -47,7 +48,20 @@
 					<br>
 					<div class="well">
 					
- 	   					<object type="image/svg+xml" data="./images/isat_third_floor.svg">Your browser does not support SVG</object>
+ 	   					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						width="100%" height="100%" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+							<image overflow="visible" width="1275" height="1650" xlink:href="./images/isatcs_third_floor.jpg" transform="matrix(0.48 0 0 0.48 0 0)">
+							</image>
+							<rect id="room22" x="336" y="193" fill="none" width="111" height="73"/>
+							<rect id="room23" x="336" y="266" fill="none" width="111" height="71"/>
+							<rect id="room24" x="336" y="337" fill="none" width="111" height="36"/>
+							<rect id="room25" x="336" y="373" fill="none" width="111" height="76"/>
+							<rect id="room26" x="336" y="507" fill="none" width="111" height="72"/>
+							<rect id="room27" x="336" y="579" fill="none" width="111" height="73"/>
+							<rect id="room28" x="472" y="167" fill="none" width="99" height="134.5"/>
+							<rect id="room29" x="472" y="306" fill="none" width="99" height="143"/>
+							<rect id="room30" x="472" y="507" fill="none" width="99" height="141"/>
+						</svg>
 					</div>
 					
 				</p>
@@ -63,7 +77,9 @@
 							<li class="list-group-item"><a href="index.html">Home</a></li>
 							<li class="list-group-item"><a href="live_map_1.html">Live Map</a></li>
 							<li class="list-group-item"><a href="historical_Data.html">Historical Trends</a></li>
-							<li class="list-group-item"><a href="resv_1.html">Reservations</a></li>
+							<!--<li class="list-group-item"><a href="resv_1.html">Reservations</a></li>-->
+							<li class="list-group-item"><a href="resv_2.html">Make a Reservation</a></li>
+							<li class="list-group-item"><a href="resv_3.html">Cancel a Reservation</a></li>	
 						</ul>
 					</div>
 			</div>
@@ -73,6 +89,43 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script src="slideoutmenu.js"></script>
+		<script src="requests.js"></script>
+
+		<script type="text/javascript">
+  		function create() {
+  			var menu = document.getElementById("site-menu");
+
+  			var ul = document.createElement('ul');
+  			var li1 = document.createElement('li');
+  			var li2 = document.createElement('li');
+  			var a1 = document.createElement('a');
+  			var a2 = document.createElement('a');
+  			var txt1 = document.createTextNode("Create a Reservation");
+  			var txt2 = document.createTextNode("Cancel a Reservation");
+
+  			ul.className = "list-group";
+
+  			a1.href = "resv_2.html";
+  			a2.href = "resv_3.html";
+
+  			a1.appendChild(txt1);
+  			a2.appendChild(txt2);
+
+  			li1.className = "list-group-item";
+  			li2.className = "list-group-item";
+
+  			li1.appendChild(a1);
+  			li2.appendChild(a2);
+
+  			ul.appendChild(li1);
+  			ul.appendChild(li2);
+
+  			menu.appendChild(ul);
+
+  			//document.getElementById("createResv").style.visibility = "visible";
+  			//document.getElementById("cancelResv").style.visibility = "visible";
+  		}
+  		</script>
 
 	</body>
 

@@ -48,7 +48,9 @@
 							<li class="list-group-item"><a href="index.html">Home</a></li>
 							<li class="list-group-item"><a href="live_map_1.html">Live Map</a></li>
 							<li class="list-group-item"><a href="historical_Data.html">Historical Trends</a></li>
-							<li class="list-group-item"><a href="resv_1.html">Reservations</a></li>
+							<!--<li class="list-group-item"><a href="resv_1.html">Reservations</a></li>-->
+							<li class="list-group-item"><a href="resv_2.html">Make a Reservation</a></li>
+							<li class="list-group-item"><a href="resv_3.html">Cancel a Reservation</a></li>
 						</ul>
 					</div>
 			</div>
@@ -65,7 +67,41 @@
     		google.setOnLoadCallback(drawChart);
   		</script>
 
+  		<script type="text/javascript">
+  		function create() {
+  			var menu = document.getElementById("site-menu");
 
+  			var ul = document.createElement('ul');
+  			var li1 = document.createElement('li');
+  			var li2 = document.createElement('li');
+  			var a1 = document.createElement('a');
+  			var a2 = document.createElement('a');
+  			var txt1 = document.createTextNode("Create a Reservation");
+  			var txt2 = document.createTextNode("Cancel a Reservation");
+
+  			ul.className = "list-group";
+
+  			a1.href = "resv_2.html";
+  			a2.href = "resv_3.html";
+
+  			a1.appendChild(txt1);
+  			a2.appendChild(txt2);
+
+  			li1.className = "list-group-item";
+  			li2.className = "list-group-item";
+
+  			li1.appendChild(a1);
+  			li2.appendChild(a2);
+
+  			ul.appendChild(li1);
+  			ul.appendChild(li2);
+
+  			menu.appendChild(ul);
+
+  			//document.getElementById("createResv").style.visibility = "visible";
+  			//document.getElementById("cancelResv").style.visibility = "visible";
+  		}
+  		</script>
 
 	</body>
 

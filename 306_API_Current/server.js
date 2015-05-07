@@ -37,9 +37,17 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//CORS Middleware
+app.use(function(req, res, next) {
+
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+});
+
 
 //The middleware shows express where all the static files are to be delivered.
-//app.use(express.static(__dirname + '/FrontEnd'))
+app.use(express.static('/home/checkout/Documents/306ProjectRepo/306_Front_End_Current'));
 
 //Load Routes =================================================
 require('./app/routes.js')(app); // Loads routes and passport

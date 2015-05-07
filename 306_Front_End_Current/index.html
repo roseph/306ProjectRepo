@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="custom.css">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		
 	</head>
 
@@ -30,11 +31,10 @@
     				<h3 class="panel-title">About UREC Count IT</h3>
   				</div>
 				<p class="panel-body">
-				UREC Count IT is an application that provides users of the JMU UREC Facilities an accurate indication of how many individuals are in the building at one time. This allows them to make decisions on whether to go, and utilize the facility or wait and find a time that may be less crowded. The application offers a live map of the building that indicates the current number of users in the building. It also features historical data for finding the historically best times to go, and a reservation system that allows for users to reserve things.
+				UREC Count IT is an application that provides users of the JMU UREC facilities an accurate indication of how many individuals are in a given room at one time. This allows them to make decisions on whether to go and utilize the facility, or wait and find a time that may be less crowded. The application offers a live map of the building that indicates the current number of users in a given room. It also features historical data for finding the best times to go, and a reservation system that allows for users to reserve individual rooms.
 
 					<div class="jumbotron">
-  						<h2>How It Works</h2>
-  						<p>...</p>
+  						<center><img src="./images/urec.jpeg" height="100%" width="100%"></center>
 					</div>
 				</p>
 				</div>
@@ -47,7 +47,9 @@
 							<li class="list-group-item"><a href="index.html">Home</a></li>
 							<li class="list-group-item"><a href="live_map_1.html">Live Map</a></li>
 							<li class="list-group-item"><a href="historical_Data.html">Historical Trends</a></li>
-							<li class="list-group-item"><a href="resv_1.html">Reservations</a></li>
+							<!--<li class="list-group-item"><a href="resv_1.html">Reservations</a></li>-->
+							<li class="list-group-item"><a href="resv_2.html">Make a Reservation</a></li>
+							<li class="list-group-item"><a href="resv_3.html">Cancel a Reservation</a></li>
 						</ul>
 					</div>
 			</div>
@@ -57,6 +59,48 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script src="slideoutmenu.js"></script>
+
+		<script type="text/javascript">
+  		function create() {
+  			var menu = document.getElementById("site-menu");
+
+  			var ul = document.createElement('ul');
+  			var li1 = document.createElement('li');
+  			var li2 = document.createElement('li');
+  			var a1 = document.createElement('a');
+  			var a2 = document.createElement('a');
+  			var txt1 = document.createTextNode("Create a Reservation");
+  			var txt2 = document.createTextNode("Cancel a Reservation");
+
+  			ul.className = "list-group";
+
+  			a1.href = "resv_2.html";
+  			a2.href = "resv_3.html";
+
+  			a1.appendChild(txt1);
+  			a2.appendChild(txt2);
+
+  			li1.className = "list-group-item";
+  			li2.className = "list-group-item";
+
+  			li1.appendChild(a1);
+  			li2.appendChild(a2);
+
+  			ul.appendChild(li1);
+  			ul.appendChild(li2);
+
+  			menu.appendChild(ul);
+
+  			//document.getElementById("createResv").style.visibility = "visible";
+  			//document.getElementById("cancelResv").style.visibility = "visible";
+  		}
+  		</script>
+
+  		<script>
+  			$('#resv_button').on('click',function(e){
+  				e.preventDefault();
+  			});
+  		</script>
 
 	</body>
 
